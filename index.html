@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#092c20"><title>007BET | Entretenimento</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="logo" href="/">007<span>BET</span></a><div id="account"><button class="btn ghost" onclick="openAuth('login')">Entrar</button><button class="btn" onclick="openAuth('register')">Cadastrar</button></div></header>
+<main>
+<div class="notice" id="notice">PLATAFORMA DE ENTRETENIMENTO • PONTOS SEM VALOR MONETÁRIO</div>
+<section class="hero"><div><span class="tag">BEM-VINDO À DIVERSÃO</span><h1 id="heroTitle">Diversão com pontos virtuais</h1><p id="heroText">Entre, jogue e acumule pontos. Sem depósitos, saques ou prêmios em dinheiro.</p><button class="btn" onclick="openAuth('register')">Começar agora</button></div><div class="hero-art">✦<b>007</b><small>PLAY ZONE</small></div></section>
+<section class="promos"><article><span>🎁</span><div><b id="promo1">Bônus de boas-vindas: 1.000 pontos virtuais</b><small>Crédito de demonstração</small></div></article><article><span>⚡</span><div><b id="promo2">Novos desafios toda semana</b><small>Entre para conferir</small></div></article></section>
+<section class="section"><div class="section-head"><div><span class="tag">ÁREA DE JOGOS</span><h2 id="gamesTitle">Escolha seu jogo</h2></div><div class="balance" id="balance">Entre para jogar</div></div>
+<div class="games">
+<article class="game rabbit"><div class="game-icon">🐰</div><div><small>JOGO DE DEMONSTRAÇÃO</small><h3>Fortune Rabbit</h3><p>Rodada com pontos virtuais</p></div><button onclick="play('Fortune Rabbit')">Jogar</button></article>
+<article class="game dragon"><div class="game-icon">🐉</div><div><small>JOGO DE DEMONSTRAÇÃO</small><h3>Dragon Fortune</h3><p>Rodada com pontos virtuais</p></div><button onclick="play('Dragon Fortune')">Jogar</button></article>
+<article class="game tiger"><div class="game-icon">🐯</div><div><small>JOGO DE DEMONSTRAÇÃO</small><h3>Golden Tiger</h3><p>Rodada com pontos virtuais</p></div><button onclick="play('Golden Tiger')">Jogar</button></article>
+</div></section>
+<section class="section user-area" id="userArea" hidden><div class="section-head"><h2>Minha conta</h2><button class="btn ghost" onclick="logout()">Sair</button></div><div class="columns"><div class="panel"><h3>Histórico de partidas</h3><div id="history">Faça uma partida para começar.</div></div><div class="panel"><h3>Fale com o suporte</h3><input id="ticketSubject" placeholder="Assunto"><textarea id="ticketMessage" placeholder="Como podemos ajudar?"></textarea><button class="btn" onclick="sendSupport()">Enviar mensagem</button></div></div></section>
+<section class="section admin-area" id="adminArea" hidden><div class="section-head"><div><span class="tag">CONTROLE DA PLATAFORMA</span><h2>Painel administrativo</h2></div><button class="btn ghost" onclick="loadAdmin()">Atualizar</button></div><div class="stats" id="stats"></div><div class="columns"><div class="panel"><h3>Editar página inicial</h3><div id="editor"></div><button class="btn" onclick="saveContent()">Salvar alterações</button></div><div class="panel"><h3>Usuários cadastrados</h3><div id="users"></div></div></div><div class="panel"><h3>Mensagens de suporte</h3><div id="tickets"></div></div></section>
+</main>
+<footer>© 007BET Entretenimento · Pontos virtuais sem valor monetário. Não há depósitos, apostas em dinheiro, saques ou prêmios financeiros.</footer>
+<div class="modal" id="authModal"><div class="dialog"><button class="x" onclick="closeAuth()">×</button><h2 id="authTitle">Entrar</h2><div id="authNameWrap" hidden><input id="authName" placeholder="Seu nome"></div><input id="authEmail" type="email" placeholder="E-mail"><input id="authPassword" type="password" placeholder="Senha (mínimo 8 caracteres)"><button class="btn full" id="authSubmit" onclick="submitAuth()">Entrar</button><p id="authSwitch"></p><small id="authError"></small></div></div>
+<div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body></html>
