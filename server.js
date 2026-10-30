@@ -81,7 +81,7 @@ app.use(session({
   cookie: { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", maxAge: 1000*60*60*8 }
 }));
 app.use("/api/auth", rateLimit({ windowMs: 15*60*1000, limit: 30, standardHeaders: true, legacyHeaders: false }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 const getContent = () => Object.fromEntries(db.prepare("SELECT key,value FROM content").all().map(x => [x.key,x.value]));
 const safeUser = u => ({ id:u.id, name:u.name, email:u.email, points:u.points, role:u.role, status:u.status });
@@ -187,5 +187,5 @@ app.patch("/api/admin/support/:id", auth, admin, (req,res) => {
   res.json({ok:true});
 });
 
-app.get("*", (req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
+app.get("*", (req,res)=>res.sendFile(path.join(__dirname,"index.html")));
 app.listen(PORT, ()=>console.log(`007BET entretenimento disponível em http://localhost:${PORT}`));
